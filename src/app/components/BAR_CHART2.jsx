@@ -13,20 +13,32 @@ import {
 
 const dropoutData = [
   {
-    name: 'Dropout',
-    Dropout: 1000,
+    name: 'Single',
+    SR: 1184,
   },
   {
-    name: 'Enrolled Target',
-    EnrolledTarget: 700,
+    name: 'Married',
+    MR: 179,
   },
   {
-    name: 'Graduate',
-    Graduate: 2200,
+    name: 'Widower',
+    WR: 1,
   },
+  {
+    name: 'Divorced',
+    DR: 42,
+  },
+  {
+    name: 'Common-law- marriage',
+    CR: 11,
+  },
+  {
+    name: 'Legally separted',
+    LR: 4,
+  }
 ];
 
-const BarChartComponent = () => {
+const BarChartComponent2 = () => {
   return (
     <ResponsiveContainer width="100%" height={300}> {/* Set a larger height for visibility */}
       <BarChart
@@ -43,9 +55,13 @@ const BarChartComponent = () => {
         <YAxis />
         <Tooltip content={<CustomTooltip />} />
         <Legend />
-        <Bar dataKey="Dropout" fill="#6EE7B7" barSize={80} /> {/* Thicker bar */}
-        <Bar dataKey="EnrolledTarget" fill="#A5F3FC" barSize={80} />
-        <Bar dataKey="Graduate" fill="#FCA5A5" barSize={80} />
+        <Bar dataKey="SR" fill="#6EE7B7" barSize={80} />   {/* Light Green */}
+        <Bar dataKey="MR" fill="#A5F3FC" barSize={80} />   {/* Light Blue */}
+        <Bar dataKey="WR" fill="#FDBA74" barSize={80} />   {/* Light Orange */}
+        <Bar dataKey="DR" fill="#FCA5A8" barSize={80} />   {/* Soft Pink */}
+        <Bar dataKey="CR" fill="#FBBF24" barSize={80} />   {/* Yellow */}
+        <Bar dataKey="LR" fill="#C084FC" barSize={80} />   {/* Lavender */}
+        
       </BarChart>
     </ResponsiveContainer>
   );
@@ -68,4 +84,4 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
-export default BarChartComponent;
+export default BarChartComponent2;
